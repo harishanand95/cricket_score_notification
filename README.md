@@ -15,6 +15,6 @@ scripts arguments.
 It was found that its not CSK its Chennai, so
 
 ## Usage: python notify.py Chennai 
-		   	should work!
+[or Chenn is good enough get it read] for it to work!
 
-[or Chenn is good enough get it read]
+
