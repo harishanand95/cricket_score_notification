@@ -1,5 +1,7 @@
-# cricket_score_notification
+# cricket score notification
 It fetches the live score from the espncricinfo RSS site and displays the score as a notification in linux systems every 20 seconds if there is a change in score.
+Live notification of Cricket score changes to desktop.
+
 
 ## Usage : python notify.py India
 

@@ -1,8 +1,9 @@
 #!/usr/bin/python
 import dbus
 import time
+import os
 import feedparser
-import sys
+
 if(len(sys.argv) < 2):
     print("Usage : python notify.py Kolkata\nUsage : python notify.py India\n")
     exit()
@@ -12,8 +13,8 @@ interface = dbus.Interface(notifications, 'org.freedesktop.Notifications')
 id = 4856
 timeout = 2500
 y = sys.argv[1]
-ipl_url_rss = "http://static.espncricinfo.com/rss/livescores.xml"
-feed = feedparser.parse(ipl_url_rss)
+cricket_url_rss = "http://static.espncricinfo.com/rss/livescores.xml"
+feed = feedparser.parse(cricket_url_rss)
 post1 = feed.entries[0]
 print("Press Control-C to exit")
 while(True):
@@ -22,6 +23,6 @@ while(True):
             interface.Notify('name',id,'',post.title,'','','',timeout)
             time.sleep(20)
             post1 = post
-            feed = feedparser.parse(ipl_url_rss)
+            feed = feedparser.parse(cricket_url_rss)
 
     
