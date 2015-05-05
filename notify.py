@@ -3,7 +3,7 @@ import dbus
 import time
 import os
 import feedparser
-
+import sys
 if(len(sys.argv) < 2):
     print("Usage : python notify.py Kolkata\nUsage : python notify.py India\n")
     exit()
