@@ -19,11 +19,13 @@ def scorecard(strr,soup):
             j = 0
         if(j == 0):
             output = ""
-            output += string
-            j += 1
+            if("omniPage" not in string):
+                output += string
+                j += 1
         elif(j != 12):
-            output += string + "  "
-            j = j + 1
+             if("omniPage" not in string):
+                 output += string + "  "
+                 j = j + 1
     if(str == strr):
         return False
     else:
@@ -46,7 +48,7 @@ cricket_url_rss = "http://static.espncricinfo.com/rss/livescores.xml"
 feed = feedparser.parse(cricket_url_rss)
 if(feed.entries == []):
     print("No Internet Connection Found or No live matches")
-#    interface.Notify('name',id,'',"No Internet Connection Found or No live matches",'','','',timeout)
+    interface.Notify('name',id,'',"No Internet Connection Found or No live matches",'','','',timeout)
     exit()
 print bcolors.OKBLUE + "\n\tESPNCRICINFO" + bcolors.ENDC
 print bcolors.YELLOW + "\tSelect Team and Notification's will be provided in Desktop\n\n" + bcolors.ENDC
